@@ -1,0 +1,36 @@
+﻿@model MvcApplication3.Models.USUARIO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>USUARIO</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.codigo_usuario)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.codigo_usuario)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nomusuario)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nomusuario)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CARGO.descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CARGO.descripcion)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

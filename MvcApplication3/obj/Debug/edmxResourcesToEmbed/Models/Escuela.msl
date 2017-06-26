@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bd_escuelaModelStoreContainer" CdmEntityContainer="bd_escuelaEntities">
+    <EntitySetMapping Name="CARGO">
+      <EntityTypeMapping TypeName="bd_escuelaModel.CARGO">
+        <MappingFragment StoreEntitySet="CARGO">
+          <ScalarProperty Name="codigo_cargo" ColumnName="codigo_cargo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIO">
+      <EntityTypeMapping TypeName="bd_escuelaModel.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIO">
+          <ScalarProperty Name="codigo_usuario" ColumnName="codigo_usuario" />
+          <ScalarProperty Name="nomusuario" ColumnName="nomusuario" />
+          <ScalarProperty Name="codigo_cargo" ColumnName="codigo_cargo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

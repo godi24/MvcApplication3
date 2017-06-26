@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bd_escuelaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="bd_escuelaModelStoreContainer">
+    <EntitySet Name="CARGO" EntityType="bd_escuelaModel.Store.CARGO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="USUARIO" EntityType="bd_escuelaModel.Store.USUARIO" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__USUARIO__codigo___15502E78" Association="bd_escuelaModel.Store.FK__USUARIO__codigo___15502E78">
+      <End Role="CARGO" EntitySet="CARGO" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CARGO">
+    <Key>
+      <PropertyRef Name="codigo_cargo" />
+    </Key>
+    <Property Name="codigo_cargo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="codigo_usuario" />
+    </Key>
+    <Property Name="codigo_usuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nomusuario" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="codigo_cargo" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__USUARIO__codigo___15502E78">
+    <End Role="CARGO" Type="bd_escuelaModel.Store.CARGO" Multiplicity="1" />
+    <End Role="USUARIO" Type="bd_escuelaModel.Store.USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CARGO">
+        <PropertyRef Name="codigo_cargo" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="codigo_cargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
